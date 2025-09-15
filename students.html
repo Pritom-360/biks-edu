@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Login with Math Challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary-color: #27ae60;
+            --primary-light: #2ecc71;
+            --error-color: #e74c3c;
+            --background-color: #f0f4f8;
+            --form-bg-color: #ffffff;
+            --text-color: #34495e;
+            --input-bg-color: #ecf0f1;
+            --border-color: #bdc3c7;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .login-form {
+            background-color: var(--form-bg-color);
+            padding: 2.5em;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+            margin: 1em;
+            overflow: hidden;
+        }
+
+        .avatar-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1.5em;
+            position: relative;
+        }
+
+        .avatar-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 2em;
+        }
+
+        .input-group label.float-label {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            color: var(--text-color);
+            opacity: 0.7;
+            pointer-events: none;
+            transition: all 0.2s ease-out;
+        }
+        
+        .input-group input:focus + label.float-label,
+        .input-group input:not(:placeholder-shown) + label.float-label {
+            top: 10px;
+            font-size: 0.75em;
+            opacity: 1;
+            color: var(--primary-color);
+        }
+
+        #math-question {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 20px 15px 10px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--input-bg-color);
+            font-size: 1em;
+            color: var(--text-color);
+            box-sizing: border-box;
+            transition: border-color 0.2s ease-out;
+        }
+        
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .input-group input::placeholder {
+            color: transparent;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease-out;
+        }
+
+        .login-button:hover {
+            background-color: var(--primary-light);
+        }
+
+        .login-button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .success-message {
+            text-align: center;
+            color: var(--primary-color);
+            font-weight: 600;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <form class="login-form" onsubmit="event.preventDefault();">
+        <div class="avatar-container">
+            <svg id="avatar" class="avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path id="avatar-body" d="M 50,95 C 20,95 5,75 5,50 C 5,25 20,5 50,5 C 80,5 95,25 95,50 C 95,75 80,95 50,95 Z" fill="#5dade2"/>
+                <g id="eyes">
+                    <circle cx="38" cy="45" r="10" fill="white"/><circle cx="62" cy="45" r="10" fill="white"/>
+                    <circle id="pupil-left" cx="38" cy="45" r="5" fill="#34495e"/><circle id="pupil-right" cx="62" cy="45" r="5" fill="#34495e"/>
+                </g>
+                <g id="mouth">
+                    <path id="mouth-neutral" d="M 40 65 Q 50 70 60 65" stroke="#34495e" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <path id="mouth-typing" d="M 40 65 Q 50 75 60 65" stroke="#34495e" stroke-width="3" fill="none" stroke-linecap="round" style="display: none;"/>
+                    <circle id="mouth-happy" cx="50" cy="70" r="6" fill="#34495e" style="display: none;"/>
+                </g>
+                <g id="arms">
+                    <path id="arm-left" d="M 5,50 C 15,30 30,35 30,35 L 15,60 Z" fill="#3498db" transform="translate(-100, 0)"/>
+                    <path id="arm-right" d="M 95,50 C 85,30 70,35 70,35 L 85,60 Z" fill="#3498db" transform="translate(100, 0)"/>
+                </g>
+            </svg>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="username" name="username" placeholder="Username" required autocomplete="username">
+            <label for="username" class="float-label">Username</label>
+        </div>
+
+        <div class="input-group">
+            <label for="math-answer" id="math-question">What is ... ?</label>
+            <input type="tel" id="math-answer" name="math-answer" required autocomplete="off">
+        </div>
+
+        <button type="button" class="login-button" id="submit-button">Verify</button>
+        <p class="success-message" id="success-message">Correct! Welcome!</p>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- CONFIGURATION ---
+        // !!! CHANGE THIS URL to your desired destination !!!
+        const redirectUrl = 'https://sites.google.com/view/biksedu-stu/home';
+
+        // --- Element Selection ---
+        const usernameInput = document.getElementById('username');
+        const mathAnswerInput = document.getElementById('math-answer');
+        const mathQuestionLabel = document.getElementById('math-question');
+        const submitButton = document.getElementById('submit-button');
+        const successMessage = document.getElementById('success-message');
+
+        const avatar = document.getElementById('avatar');
+        const avatarBody = document.getElementById('avatar-body');
+        const pupilLeft = document.getElementById('pupil-left');
+        const pupilRight = document.getElementById('pupil-right');
+        const armLeft = document.getElementById('arm-left');
+        const armRight = document.getElementById('arm-right');
+        const mouthNeutral = document.getElementById('mouth-neutral');
+        const mouthTyping = document.getElementById('mouth-typing');
+        const mouthHappy = document.getElementById('mouth-happy');
+        
+        let isCoveringEyes = false;
+        let correctAnswer = 0;
+        const eyeRadius = 4;
+
+        const caretMeasure = document.createElement('div');
+        document.body.appendChild(caretMeasure);
+        
+        function setupCaretMeasure() {
+            const styles = window.getComputedStyle(usernameInput);
+            Object.keys(styles).forEach(key => {
+                if (['font', 'padding', 'border', 'letterSpacing', 'wordSpacing'].some(prop => key.startsWith(prop))) {
+                    caretMeasure.style[key] = styles[key];
+                }
+            });
+            caretMeasure.style.position = 'absolute';
+            caretMeasure.style.left = '-9999px';
+            caretMeasure.style.whiteSpace = 'pre';
+        }
+
+        function getCaretXPosition() {
+            caretMeasure.textContent = usernameInput.value.substring(0, usernameInput.selectionStart);
+            return caretMeasure.offsetWidth;
+        }
+
+        function trackCaret() {
+            const caretX = getCaretXPosition();
+            const inputWidth = usernameInput.clientWidth;
+            const percentageX = Math.max(0, Math.min(1, caretX / inputWidth));
+            const lookDirectionX = (percentageX - 0.5) * 2;
+            const lookDirectionY = -0.5;
+
+            gsap.to([pupilLeft, pupilRight], { x: lookDirectionX * eyeRadius, y: lookDirectionY * eyeRadius, duration: 0.5, ease: 'power2.out' });
+        }
+
+        function resetEyes() {
+            gsap.to([pupilLeft, pupilRight], { x: 0, y: 0, duration: 0.5, ease: 'power2.out' });
+        }
+        
+        function onUsernameValueChange() {
+            trackCaret();
+            const value = usernameInput.value;
+            mouthNeutral.style.display = 'none';
+            mouthTyping.style.display = 'none';
+            mouthHappy.style.display = 'none';
+
+            if (value.length > 5) {
+                mouthHappy.style.display = 'block';
+            } else if (value.length > 0) {
+                mouthTyping.style.display = 'block';
+            } else {
+                mouthNeutral.style.display = 'block';
+            }
+        }
+
+        function generateMathProblem() {
+            const num1 = Math.floor(Math.random() * 10) + 1;
+            const num2 = Math.floor(Math.random() * 10) + 1;
+            const isAddition = Math.random() > 0.5;
+
+            if (isAddition) {
+                correctAnswer = num1 + num2;
+                mathQuestionLabel.textContent = `What is ${num1} + ${num2}?`;
+            } else {
+                if (num1 < num2) {
+                    correctAnswer = num2 - num1;
+                    mathQuestionLabel.textContent = `What is ${num2} - ${num1}?`;
+                } else {
+                    correctAnswer = num1 - num2;
+                    mathQuestionLabel.textContent = `What is ${num1} - ${num2}?`;
+                }
+            }
+        }
+
+        function coverEyes() {
+            if (isCoveringEyes) return;
+            isCoveringEyes = true;
+            gsap.to(armLeft, { x: 100, duration: 0.4, ease: 'power2.out' });
+            gsap.to(armRight, { x: -100, duration: 0.4, ease: 'power2.out' });
+        }
+        
+        function uncoverEyes() {
+            if (!isCoveringEyes) return;
+            isCoveringEyes = false;
+            gsap.to(armLeft, { x: 0, duration: 0.4, ease: 'power2.in' });
+            gsap.to(armRight, { x: 0, duration: 0.4, ease: 'power2.in' });
+        }
+
+        function handleVerification() {
+            const userAnswer = parseInt(mathAnswerInput.value, 10);
+            if (userAnswer === correctAnswer) {
+                // --- Success ---
+                submitButton.disabled = true;
+                mathAnswerInput.disabled = true;
+                usernameInput.disabled = true;
+                successMessage.textContent = 'Correct! Redirecting...';
+                successMessage.style.display = 'block';
+
+                gsap.to(mathAnswerInput, { borderColor: 'var(--primary-color)', duration: 0.3 });
+                gsap.to(avatarBody, { fill: '#2ecc71', duration: 0.3 });
+                
+                mouthNeutral.style.display = 'none';
+                mouthTyping.style.display = 'none';
+                mouthHappy.style.display = 'block';
+                uncoverEyes();
+
+                // Happy bounce animation with redirect on completion
+                const tl = gsap.timeline({
+                    onComplete: () => {
+                        window.location.href = redirectUrl;
+                    }
+                });
+                tl.to(avatar, { y: -15, duration: 0.2, ease: 'power2.out' })
+                  .to(avatar, { y: 0, duration: 0.5, ease: 'bounce.out' })
+                  .to({}, {duration: 0.5}); // Add a small delay before redirecting
+
+            } else {
+                // --- Failure ---
+                gsap.fromTo(avatar, { x: 0 }, {
+                    x: 10, duration: 0.07, repeat: 5, yoyo: true, ease: 'power1.inOut',
+                    onComplete: () => gsap.set(avatar, {x: 0})
+                });
+
+                gsap.to(mathAnswerInput, { borderColor: 'var(--error-color)', duration: 0.3, onComplete: () => {
+                    gsap.to(mathAnswerInput, { borderColor: 'var(--border-color)', duration: 0.3, delay: 0.5 });
+                }});
+
+                mathAnswerInput.value = '';
+                generateMathProblem();
+            }
+        }
+
+        // --- Event Listeners ---
+        usernameInput.addEventListener('focus', onUsernameValueChange);
+        usernameInput.addEventListener('input', onUsernameValueChange);
+        usernameInput.addEventListener('keyup', trackCaret);
+        usernameInput.addEventListener('click', trackCaret);
+        usernameInput.addEventListener('blur', resetEyes);
+        
+        mathAnswerInput.addEventListener('focus', coverEyes);
+        mathAnswerInput.addEventListener('blur', uncoverEyes);
+        
+        submitButton.addEventListener('click', handleVerification);
+        
+        // --- Initial Setup ---
+        setupCaretMeasure();
+        generateMathProblem();
+    });
+    </script>
+</body>
+</html>

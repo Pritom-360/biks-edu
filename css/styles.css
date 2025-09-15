@@ -1,0 +1,255 @@
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@400;700&family=Comic+Neue:wght@700&display=swap');
+
+/* 
+font-family: 'Poppins', sans-serif;
+font-family: 'Nunito', sans-serif;
+font-family: 'Comic Neue', cursive; 
+*/
+
+/* --- Global Styles --- */
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f0f8ff; /* Light sky blue background */
+    color: #333;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a2d2ff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Comic Neue', cursive;
+    color: #ff6347; /* Tomato red for headings */
+}
+
+.btn {
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background-color: #ff6347;
+    border-color: #ff6347;
+}
+
+.btn-primary:hover {
+    background-color: #e5533d;
+    border-color: #e5533d;
+}
+
+
+/* --- Header and Navigation --- */
+.navbar {
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-family: 'Comic Neue', cursive;
+    font-size: 2rem;
+    color: #4682b4 !important; /* Steel Blue */
+    font-weight: bold;
+}
+
+.nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin: 0 10px;
+    color: #555 !important;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #ff6347 !important; /* Tomato red on hover/active */
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffc107; /* Bright yellow */
+    transition: width 0.3s;
+}
+
+.nav-link:hover::before, .nav-link.active::before {
+    width: 100%;
+}
+
+
+/* --- Main Content --- */
+.page-title {
+    font-size: 3.5rem;
+    color: #4682b4;
+    text-shadow: 2px 2px #ffc107; /* Fun text shadow */
+}
+
+/* --- Tabs --- */
+.nav-tabs {
+    border-bottom: none;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    font-family: 'Comic Neue', cursive;
+    background-color: #fff;
+    color: #4682b4;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #ffc107; /* Bright yellow for active tab */
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+.nav-tabs .nav-link:hover {
+     background-color: #ffe082;
+     color: #fff;
+}
+
+.tab-content {
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+
+/* --- Content Grids (Games, Stories, Videos) --- */
+.grid-item {
+    margin-bottom: 30px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.grid-item:hover {
+    transform: translateY(-10px);
+}
+
+.grid-item-inner {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.grid-item-inner img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 3px solid #f0f8ff;
+}
+
+.grid-item-inner h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #4682b4;
+}
+
+/* Sample for games grid */
+#games-grid, #stories-grid, #videos-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* --- Achievements --- */
+#achievements-list .achievement-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff8e1; /* Light yellow background for items */
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 5px solid #ffc107; /* Yellow accent border */
+}
+
+#achievements-list .achievement-icon {
+    font-size: 2rem;
+    color: #ffc107;
+    margin-right: 20px;
+}
+
+#achievements-list .achievement-details h5 {
+    margin-bottom: 0;
+    color: #333;
+}
+#achievements-list .achievement-details p {
+    margin-bottom: 0;
+    color: #666;
+}
+
+
+/* --- Story Modal --- */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+}
+.modal-header {
+    background-color: #4682b4;
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.modal-header .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+.modal-title {
+    font-family: 'Comic Neue', cursive;
+}
+#readAloudBtn {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #333;
+}
+.modal-body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* --- Footer --- */
+.site-footer {
+    background: #343a40;
+    color: #f8f9fa;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    margin-top: 40px;
+    background-image: url("https://www.transparenttextures.com/patterns/stars.png"); /* Subtle star pattern */
+}
+
+.site-footer a {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.site-footer strong {
+    color: #fff;
+}
+.social-links a {
+    transition: transform 0.2s;
+}
+.social-links a:hover {
+    transform: scale(1.2);
+    color: #ffc107;
+}

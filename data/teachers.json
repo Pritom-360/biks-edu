@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Shirajul Alam Bhuiyan",
+    "title": "Head Teacher",
+    "qualification": "Member of Child Development Programme, Bangladesh",
+    "image": "images/image/head_sir.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Mr. Kamal Ahmed",
+    "title": "Class Teacher - KG",
+    "qualification": "B.A. in English",
+    "image": "https://via.placeholder.com/300x300.png?text=Kamal+A"
+  },
+  {
+    "id": 3,
+    "name": "Ms. Farida Yasmin",
+    "title": "Art & Craft Teacher",
+    "qualification": "Diploma in Fine Arts",
+    "image": "https://via.placeholder.com/300x300.png?text=Farida+Y"
+  }
+]

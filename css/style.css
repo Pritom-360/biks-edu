@@ -1,0 +1,390 @@
+/* ===================================================================
+   BIKS EDU - Stylesheet (Updated to match design)
+   =================================================================== */
+
+/* --- 1. Root Variables & Global Styles --- */
+:root {
+    --biks-red: #E63946;
+    --biks-blue: #457B9D;
+    --biks-light-blue: #A8DADC; /* The line under the header */
+    --biks-background: #F1FAEE;
+    --biks-dark: #1D3557;
+    --biks-yellow: #FFC300; /* The line under the hero */
+
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Nunito', sans-serif;
+    --font-fun: 'Comic Neue', cursive;
+}
+
+body {
+    font-family: var(--font-secondary);
+    background-color: var(--biks-background);
+    color: var(--biks-dark);
+    line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+}
+
+/* Fun font for big section titles */
+.page-title {
+    font-family: var(--font-fun);
+    color: var(--biks-blue);
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+
+/* --- 2. Header & Navigation --- */
+.navbar {
+    /* The light blue line from your image */
+    border-bottom: 4px solid var(--biks-light-blue);
+    background-color: #fff !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* 2a. Navbar Logo Styling */
+.navbar-brand {
+    padding: 0;
+}
+.biks-logo {
+    /* Control the size of your logo */
+    max-height: 45px;
+}
+
+.nav-link {
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+.nav-link:hover {
+    color: var(--biks-red) !important;
+    transform: translateY(-2px);
+}
+.nav-link.active {
+    color: var(--biks-red) !important;
+    font-weight: 700;
+}
+
+
+/* --- 3. Hero Banner (Styled to match your image) --- */
+.hero-banner {
+    /* IMPORTANT: Uses your background photo */
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('../images/hero-background.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 60vh; /* Use min-height for better responsiveness */
+    padding: 4rem 0;
+    /* The yellow line from your image */
+    border-bottom: 8px solid var(--biks-yellow);
+}
+
+.hero-banner h1 {
+    /* Match the hero font from the image */
+    font-family: var(--font-fun);
+    font-weight: 700;
+    font-size: clamp(2.5rem, 10vw, 4.5rem); /* Responsive font size */
+    /* The subtle shadow from your image */
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
+}
+
+.hero-banner p.lead {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+/* 3a. Hero Button Styling */
+.hero-banner .btn {
+    /* The pill shape from your image */
+    border-radius: 50px;
+    padding: 12px 35px;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-width: 0; /* Remove border for a flatter look */
+    transition: all 0.3s ease;
+}
+
+.hero-banner .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+
+/* --- 4. Cards & Other Sections --- */
+.card {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Match icon colors to the brand palette */
+.card .text-primary {
+    color: var(--biks-blue) !important;
+}
+.card .text-danger {
+    color: var(--biks-red) !important;
+}
+
+.card .fa-3x {
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.card:hover .fa-3x {
+    transform: scale(1.2) rotate(15deg);
+}
+
+
+/* --- 5. Testimonials --- */
+.testimonial-card {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    position: relative;
+    border: 4px solid var(--biks-light-blue);
+}
+
+.testimonial-card::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f10d";
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 2rem;
+    color: var(--biks-light-blue);
+    opacity: 0.5;
+}
+
+.testimonial-card footer {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--biks-red);
+}
+
+
+/* --- 6. Footer --- */
+/* --- 7. Achievement Page Styles --- */
+.achievement-header, .workshop-header {
+    background: linear-gradient(rgba(69, 123, 157, 0.9), rgba(69, 123, 157, 0.9)), 
+                url('../images/image/news_cut/col.jpg') center/cover no-repeat;
+    position: relative;
+}
+
+.achievement-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.achievement-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.achievement-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.achievement-list li i {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    color: var(--biks-blue);
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gallery-item img {
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-caption {
+    display: none !important; /* hide the caption text under/over images */
+}
+
+/* --- 8. Workshop Page Styles --- */
+.workshop-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.workshop-card:hover {
+    transform: translateY(-10px);
+}
+
+.workshop-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.workshop-card .card-body {
+    padding: 1.5rem;
+    position: relative;
+}
+
+.workshop-card .card-icon {
+    position: absolute;
+    top: -40px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: var(--biks-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.workshop-features {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.workshop-features li {
+    margin-bottom: 0.5rem;
+    color: var(--biks-dark);
+}
+
+.workshop-features li i {
+    margin-right: 0.5rem;
+    color: var(--biks-blue);
+}
+
+/* Swiper Styles */
+.swiper {
+    padding: 2rem 0;
+}
+
+.swiper-slide {
+    transition: transform 0.3s ease;
+}
+
+.swiper-slide:hover {
+    transform: scale(1.05);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--biks-blue);
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--biks-blue);
+}
+
+/* Video Container Styles */
+.video-container {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.video-container h4 {
+    padding: 1rem;
+    margin: 0;
+    text-align: center;
+    background: var(--biks-light-blue);
+    color: var(--biks-dark);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--biks-dark);
+    color: var(--biks-background);
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+/* Enhanced site footer styles */
+.site-footer {
+    background-color: #0f2b44; /* slightly different dark for contrast */
+    color: #f1f7fb;
+}
+.site-footer a {
+    color: #f1f7fb;
+    text-decoration: none;
+}
+.site-footer a:hover {
+    color: var(--biks-light-blue);
+}
+.site-footer .social-links a {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+    transition: transform 0.18s ease, background 0.18s ease;
+}
+.site-footer .social-links a:hover {
+    transform: translateY(-4px) scale(1.06);
+    background: rgba(255,255,255,0.06);
+}
+.site-footer .list-unstyled a {
+    display: inline-block;
+    padding: 2px 0;
+}
+.site-footer hr.border-light {
+    opacity: 0.08;
+}
+.site-footer small {
+    color: rgba(241,247,251,0.85);
+}
+
+/* Responsive footer stacking */
+@media (max-width: 767px) {
+    .site-footer .d-flex.justify-content-between.small {
+        flex-direction: column;
+        gap: 6px;
+        align-items: center;
+    }
+    .site-footer .text-md-start, .site-footer .text-md-end {
+        text-align: center !important;
+    }
+}

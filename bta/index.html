@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="page_title">BIKS টেক একাডেমি | কোডিং-এর হাতেখড়ি থেকে AI-এর দুনিয়া!</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts (Hind Siliguri & Noto Sans Bengali) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/+8801815650971?text=BIKS টেক একাডেমির কোর্স সম্পর্কে জানতে চাই।" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Cart Modal (Hidden by default) -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close-btn" onclick="toggleCart(false)">&times;</span>
+            <h3 data-key="cart_heading">আপনার কোর্সের ঝুড়ি (Cart)</h3>
+            <div id="cart-items-list">
+                <p class="empty-cart-message" data-key="cart_empty_msg">আপনার ঝুড়ি খালি। একটি কোর্স নির্বাচন করুন।</p>
+            </div>
+            <div class="cart-summary">
+                <p data-key="cart_total_label">মোট মূল্য: <span id="cart-total">০</span> টাকা</p>
+            </div>
+            <button class="checkout-btn" onclick="redirectToWhatsApp()" data-key="cart_checkout_btn">অর্ডার কনফার্ম করুন (WhatsApp)</button>
+        </div>
+    </div>
+
+    <!-- Header & Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1 data-key="logo_title">BIKS টেক একাডেমি</h1>
+                <p data-key="logo_motto">"কোডিং-এর হাতেখড়ি থেকে AI-এর দুনিয়া!"</p>
+            </div>
+           <nav id="nav-menu">
+                <ul>
+                    <li><a href="#level-1" onclick="toggleMenu()" data-key="nav_level_1">লেভেল ১</a></li>
+                    <li><a href="#level-2" onclick="toggleMenu()" data-key="nav_level_2">লেভেল ২</a></li>
+                    <li><a href="#level-3" onclick="toggleMenu()" data-key="nav_level_3">লেভেল ৩</a></li>
+                    <li><a href="#mentors" onclick="toggleMenu()" data-key="nav_mentors">মেন্টর</a></li>
+                    <li><a href="#pricing" onclick="toggleMenu()" data-key="nav_pricing">প্রাইসিং</a></li>
+                    <li><a href="#offers" onclick="toggleMenu()" data-key="nav_offers">অফার</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()" data-key="nav_contact">যোগাযোগ</a></li>
+                </ul>
+            </nav>
+            <div class="nav-tools">
+                <button id="lang-switcher" onclick="switchLanguage()" class="lang-switcher-btn" data-lang="bn">EN</button>
+                <a href="tel:+8801815650971" class="phone-link"><i class="fas fa-phone"></i> +৮৮০ ১৮১৫ ৬৫ ০৯৭১</a>
+                <button id="cart-button" class="cart-button" onclick="toggleCart(true)">
+                    <i class="fas fa-shopping-cart"></i> 
+                    <span id="cart-count" class="cart-count">0</span>
+                </button>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 data-key="hero_heading">ভবিষ্যতের জন্য প্রস্তুত হোন: AI ও কোডিং এখন হাতের মুঠোয়</h1>
+                    <p data-key="hero_subtitle">৬ থেকে ১৬ বছর বয়সী শিশুদের জন্য ৩-স্তরের পূর্ণাঙ্গ প্রোগ্রামিং কারিকুলাম।</p>
+                    <a href="#pricing" class="btn primary-btn" data-key="hero_cta">কোর্সগুলো দেখুন <i class="fas fa-arrow-down"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Level 1 Section -->
+        <section id="level-1" class="level-section level-1-bg">
+            <div class="container">
+                <span class="level-tag" data-key="level_tag_1">লেভেল ১</span>
+                <h2 data-key="level_1_title">লিটল এক্সপ্লোরার (Little Explorer) 🍀</h2>
+                <p class="subtitle" data-key="level_1_subtitle">(যুক্তি ও কল্পনার ভিত্তি)</p>
+
+                <div class="level-card">
+                    <div class="details">
+                        <p><strong><i class="fas fa-users"></i> <span data-key="target_age_label">টার্গেট বয়স:</span></strong> ৬-৯ বছর</p>
+                        <p><strong><i class="fas fa-desktop"></i> <span data-key="platform_label">প্ল্যাটফর্ম:</span></strong> Scratch Jr. এবং Scratch</p>
+                        <p><strong><i class="fas fa-clock"></i> <span data-key="duration_label">সময়কাল:</span></strong> ৩ মাস (মোট ২৪টি ক্লাস)</p>
+                        <p class="description"><strong><span data-key="main_goal_label">মূল লক্ষ্য:</span></strong> <span data-key="goal_L1_desc">টাইপিং-এর ভয় দূর করা। 'ট্র্যাগ-এন্ড-ড্রপ' ব্লক ব্যবহার করে গল্প, অ্যানিমেশন এবং সহজ গেম বানানো।</span></p>
+                        <div class="syllabus">
+                            <h4 data-key="syllabus_heading">সিলেবাস হাইলাইটস</h4>
+                            <ul>
+                                <li data-key="L1_syl_1"><i class="fas fa-palette"></i> স্প্রাইট, মোশন, সাউন্ড ব্লক</li>
+                                <li data-key="L1_syl_2"><i class="fas fa-redo"></i> ইভেন্টস ও লুপস (Loops)</li>
+                                <li data-key="L1_syl_3"><i class="fas fa-cogs"></i> ভেরিয়েবল (Score) ও কন্ডিশন (If/Then)</li>
+                                <li data-key="L1_syl_4"><i class="fas fa-gamepad"></i> প্রজেক্ট: "Catching Game" এবং Maze গেম</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ai-info">
+                        <h3 data-key="ai_bonus_heading">ফ্রি AI বোনাস</h3>
+                        <p data-key="L1_ai_1"><i class="fas fa-robot"></i> <strong>"AI দিয়ে গল্প লেখা!":</strong> স্ক্র্যাচ গেমের জন্য আইডিয়া ও গল্প তৈরি (Basic Prompt Understanding)।</p>
+                        <p data-key="L1_ai_2"><i class="fas fa-paint-brush"></i> <strong>"AI Art for Kids":</strong> AI-কে নির্দেশনা দিয়ে কার্টুন ও ছবি বানানোর আইডিয়া।</p>
+                        <button class="btn add-to-cart-btn" onclick="addToCart('L1_SCRATCH', 'লেভেল ১: Scratch/Scratch Jr.', 1500)" data-key="enroll_L1">
+                            ভর্তি হন (১,৫০০ টাকা/মাস) <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Level 2 Section -->
+        <section id="level-2" class="level-section level-2-bg">
+            <div class="container">
+                <span class="level-tag" data-key="level_tag_2">লেভেল ২</span>
+                <h2 data-key="level_2_title">ক্রিয়েটিভ বিল্ডার (Creative Builder) 🎮📱</h2>
+                <p class="subtitle" data-key="level_2_subtitle">(বাস্তব পৃথিবীতে প্রয়োগ)</p>
+
+                <div class="track-grid">
+                    <!-- Track 2.1 -->
+                    <div class="track-card">
+                        <h3 data-key="track_2_1_title"><i class="fas fa-mobile-alt"></i> ট্র্যাক ২.১: অ্যাপ ডেভেলপার</h3>
+                        <p><strong><span data-key="platform_label">প্ল্যাটফর্ম:</span></strong> MIT App Inventor</p>
+                        <p><strong><span data-key="main_goal_label">মূল লক্ষ্য:</span></strong> <span data-key="goal_T2_1_desc">ব্লক-কোডিং ব্যবহার করে নিজের মোবাইল অ্যাপ তৈরি করা।</span></p>
+                        <div class="syllabus">
+                            <ul>
+                                <li data-key="T2_1_syl_1">অ্যান্ড্রয়েড অ্যাপ ডিজাইন, ইউজার ইন্টারফেস (UI)</li>
+                                <li data-key="T2_1_syl_2">প্রজেক্ট: "Talking Pet" অ্যাপ, "Mini Paint" ও "Quiz App"</li>
+                            </ul>
+                        </div>
+                        <button class="btn add-to-cart-btn" onclick="addToCart('L2_APPINV', 'লেভেল ২: App Inventor (App Dev)', 2000)" data-key="enroll_T2_1">
+                            ট্র্যাক ২.১ (২,০০০ টাকা/মাস) <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+
+                    <!-- Track 2.2 -->
+                    <div class="track-card">
+                        <h3 data-key="track_2_2_title"><i class="fas fa-cube"></i> ট্র্যাক ২.২: গেম ডিজাইনার</h3>
+                        <p><strong><span data-key="platform_label">প্ল্যাটফর্ম:</span></strong> Roblox Studio</p>
+                        <p><strong><span data-key="main_goal_label">মূল লক্ষ্য:</span></strong> <span data-key="goal_T2_2_desc">৩ডি গেমিং প্ল্যাটফর্মে নিজের Obstacle Course (Obby) গেম তৈরি ও শেয়ার করা।</span></p>
+                        <div class="syllabus">
+                            <ul>
+                                <li data-key="T2_2_syl_1">Roblox ৩ডি জগত ডিজাইন, Obby গেম বানানো</li>
+                                <li data-key="T2_2_syl_2">বেসিক Lua স্ক্রিপ্টিং ও গেম শেয়ারিং</li>
+                            </ul>
+                        </div>
+                        <button class="btn add-to-cart-btn" onclick="addToCart('L2_ROBLOX', 'লেভেল ২: Roblox Studio (Game Dev)', 2000)" data-key="enroll_T2_2">
+                            ট্র্যাক ২.২ (২,০০০ টাকা/মাস) <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="combo-offer">
+                    <p class="save-tag" data-key="save_500"><i class="fas fa-percent"></i> ৫০০ টাকা ছাড়!</p>
+                    <h3 data-key="combo_L2_title">লেভেল ২ কম্বো অফার</h3>
+                    <p data-key="combo_L2_desc">অ্যাপ ডেভেলপার + গেম ডিজাইনার (App Inventor + Roblox)</p>
+                    <button class="btn primary-btn" onclick="addToCart('L2_COMBO', 'লেভেল ২ কম্বো (App Inventor + Roblox)', 3500)" data-key="enroll_combo_L2">
+                        কম্বো অফারে ভর্তি হন (৩,৫০০ টাকা/মাস) <i class="fas fa-tags"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Level 3 Section -->
+        <section id="level-3" class="level-section level-3-bg">
+            <div class="container">
+                <span class="level-tag" data-key="level_tag_3">লেভেল ৩</span>
+                <h2 data-key="level_3_title">ফিউচার প্রোগ্রামার (Future Programmer) 💻🌐</h2>
+                <p class="subtitle" data-key="level_3_subtitle">(ক্যারিয়ার ও ইউনিভার্সিটির প্রস্তুতি)</p>
+                
+                <div class="track-grid">
+                    <!-- Track 3.1 -->
+                    <div class="track-card">
+                        <h3 data-key="track_3_1_title"><i class="fas fa-terminal"></i> ট্র্যাক ৩.১: ইউনিভার্সিটি ফাউন্ডেশন</h3>
+                        <p><strong><span data-key="platform_label">প্ল্যাটফর্ম:</span></strong> C Language (টেক্সট-বেসড প্রোগ্রামিং)</p>
+                        <p><strong><span data-key="main_goal_label">মূল লক্ষ্য:</span></strong> <span data-key="goal_T3_1_desc">টেক্সট-বেসড প্রোগ্রামিং লজিক তৈরি ও প্রবলেম সলভিং।</span></p>
+                        <div class="syllabus">
+                            <ul>
+                                <li data-key="T3_1_syl_1">ভেরিয়েবল, ডেটা টাইপ, if/else, লুপস (Loops)</li>
+                                <li data-key="T3_1_syl_2">প্রজেক্ট: গ্রেড ক্যালকুলেটর, প্যাটার্ন প্রিন্টিং</li>
+                            </ul>
+                        </div>
+                        <button class="btn add-to-cart-btn" onclick="addToCart('L3_C_LANG', 'লেভেল ৩: C Language (Logic Builder)', 2500)" data-key="enroll_T3_1">
+                            ট্র্যাক ৩.১ (২,৫০০ টাকা/মাস) <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+
+                    <!-- Track 3.2 -->
+                    <div class="track-card">
+                        <h3 data-key="track_3_2_title"><i class="fas fa-globe"></i> ট্র্যাক ৩.২: ওয়েব আর্কিটেক্ট</h3>
+                        <p><strong><span data-key="platform_label">প্ল্যাটফর্ম:</span></strong> Web Dev (HTML, CSS, JavaScript)</p>
+                        <p><strong><span data-key="main_goal_label">মূল লক্ষ্য:</span></strong> <span data-key="goal_T3_2_desc">নিজস্ব পার্সোনাল ওয়েবসাইট তৈরি এবং ইন্টারঅ্যাক্টিভ করা।</span></p>
+                        <div class="syllabus">
+                            <ul>
+                                <li data-key="T3_2_syl_1">HTML কঙ্কাল, CSS ডিজাইন (Flexbox)</li>
+                                <li data-key="T3_2_syl_2">JavaScript (বেসিক) দিয়ে ওয়েবসাইট ইন্টারঅ্যাক্টিভ করা</li>
+                                <li data-key="T3_2_syl_3">প্রজেক্ট: সম্পূর্ণ পার্সোনাল ওয়েবসাইট</li>
+                            </ul>
+                        </div>
+                        <button class="btn add-to-cart-btn" onclick="addToCart('L3_WEBDEV', 'লেভেল ৩: Web Dev (Web Architect)', 2500)" data-key="enroll_T3_2">
+                            ট্র্যাক ৩.২ (২,৫০০ টাকা/মাস) <i class="fas fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="combo-offer">
+                    <p class="save-tag" data-key="save_500"><i class="fas fa-percent"></i> ৫০০ টাকা ছাড়!</p>
+                    <h3 data-key="combo_L3_title">লেভেল ৩ কম্বো অফার</h3>
+                    <p data-key="combo_L3_desc">ইউনিভার্সিটি ফাউন্ডেশন + ওয়েব আর্কিটেক্ট (C Language + Web Dev)</p>
+                    <button class="btn primary-btn" onclick="addToCart('L3_COMBO', 'লেভেল ৩ কম্বো (C Language + Web Dev)', 4500)" data-key="enroll_combo_L3">
+                        কম্বো অফারে ভর্তি হন (৪,৫০০ টাকা/মাস) <i class="fas fa-tags"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+                <!-- NEW: Free Trial Class Section -->
+        <section id="trial" class="trial-section">
+            <div class="container">
+                <div class="cta-card">
+                    <h2 data-key="trial_heading">নিশ্চিত নন কোন কোর্সটি সেরা?</h2>
+                    <p class="subtitle" data-key="trial_subtitle">আপনার সন্তানের জন্য সঠিক পথ বেছে নিতে আমাদের একটি ফ্রি ট্রায়াল ক্লাসের জন্য অনুরোধ করুন। কোনো বাধ্যবাধকতা নেই!</p>
+                    <a href="https://wa.me/+8801815650971?text=আমি BIKS টেক একাডেমিতে একটি ফ্রি ট্রায়াল ক্লাসের জন্য বুক করতে চাই।" class="btn primary-btn large-btn" target="_blank" data-key="trial_cta_btn">
+                        ফ্রি ট্রায়াল ক্লাস বুক করুন <i class="fas fa-calendar-check"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Mentors Section -->
+        <section id="mentors" class="mentor-section">
+            <div class="container">
+                <h2 data-key="mentors_heading">আমাদের অভিজ্ঞ মেন্টর ও কাউন্সিল</h2>
+                <p class="subtitle" data-key="mentors_subtitle">আমাদের শিক্ষকরা শুধুমাত্র কোডার নন, তারা হলেন ভবিষ্যতের পথপ্রদর্শক।</p>
+                <div class="mentor-grid">
+                    <div class="mentor-card">
+                        <div class="mentor-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3 data-key="mentor_card1_title">অভিজ্ঞ শিক্ষক</h3>
+                        <p data-key="mentor_card1_desc">আমাদের সকল শিক্ষক DSAB মেথড ও ব্রিটিশ কাউন্সিল দ্বারা প্রশিক্ষিত এবং শিশুদের মনস্তত্ত্ব বোঝেন।</p>
+                    </div>
+                    <div class="mentor-card">
+                        <div class="mentor-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3 data-key="mentor_card2_title">টেকনোলজি মেন্টর</h3>
+                        <p data-key="mentor_card2_desc">টেক ইন্ডাস্ট্রির পেশাদাররা আমাদের মেন্টর কাউন্সিলে আছেন, যারা বাস্তব অভিজ্ঞতা দিয়ে কারিকুলামকে সমৃদ্ধ করেন।</p>
+                    </div>
+                    <div class="mentor-card">
+                        <div class="mentor-icon"><i class="fas fa-heart"></i></div>
+                        <h3 data-key="mentor_card3_title">বন্ধুত্বপূর্ণ সাপোর্ট</h3>
+                        <p data-key="mentor_card3_desc">আমরা প্রতিটি শিশুর প্রতি ব্যক্তিগতভাবে নজর দিই এবং তাদের শেখার আগ্রহকে সবচেয়ে বেশি গুরুত্ব দিই।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Support Session Section -->
+        <section id="support" class="support-section">
+            <div class="container">
+                 <div class="cta-card support-card">
+                    <h2 data-key="support_heading">মেন্টরশিপ ও সাপোর্ট সেশন</h2>
+                    <p class="subtitle" data-key="support_subtitle">আপনার সন্তানের প্রজেক্ট, সমস্যা সমাধান বা ক্যারিয়ার গাইডেন্সের জন্য আমাদের একজন মেন্টরের সাথে একটি ওয়ান-টু-ওয়ান সেশন বুক করুন।</p>
+                    <p class="subtitle" data-key="support_subtitle2" style="color:red">এটি ফ্রি দিতে চেয়েও, আপনাদের প্রচুর চাহিদার জন্য বাধ্য হয়ে কিছু চার্জ করতে হচ্ছে আমাদের। আমরা আন্তরিক ভাবে দুঃখিত।</p>
+                    <div class="support-pricing">
+                        <p data-key="support_price">সাধারণ মূল্য: ২০০ টাকা/সেশন</p>
+                        <p class="discount" data-key="support_discount">BIKS শিক্ষার্থীদের জন্য ৫০% ছাড় (মাত্র ১০০ টাকা)!</p>
+                    </div>
+                    <a href="https://wa.me/+8801815650971?text=আমি BIKS টেক একাডেমিতে একটি সাপোর্ট সেশন বুক করতে চাই।" class="btn primary-btn" target="_blank" data-key="support_cta_btn">
+                        সেশন বুক করুন <i class="fas fa-headset"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing-section">
+            <div class="container">
+                <h2 data-key="pricing_heading">BIKS টেক একাডেমি: প্রাইসিং মডেল</h2>
+                <p class="subtitle" data-key="pricing_subtitle">বাজারের সেরা মূল্যে আমাদের পূর্ণাঙ্গ প্রিমিয়াম কারিকুলামে আপনার শিশুকে কোডিং শেখান।</p>
+                
+                <div class="pricing-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-key="table_level">লেভেল</th>
+                                <th data-key="table_course">কোর্স</th>
+                                <th data-key="table_price">BIKS প্রস্তাবিত মূল্য (মাসিক)</th>
+                                <th data-key="table_order">অর্ডার</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>১</td>
+                                <td>Scratch Jr. / Scratch</td>
+                                <td class="price-cell">১,৫০০ <span data-key="per_month">টাকা/মাসিক</span></td>
+                                <td><button class="btn small-btn" onclick="addToCart('L1_SCRATCH', 'লেভেল ১: Scratch/Scratch Jr.', 1500)" data-key="add_btn">Add</button></td>
+                            </tr>
+                            <tr>
+                                <td>২</td>
+                                <td>App Inventor / Roblox (যেকোনো একটি)</td>
+                                <td class="price-cell">২,০০০ <span data-key="per_month">টাকা/মাসিক</span></td>
+                                <td><button class="btn small-btn" onclick="toggleCart(true)" data-key="select_track">Select Track</button></td>
+                            </tr>
+                            <tr class="combo-row">
+                                <td>২ কম্বো</td>
+                                <td>App Inventor + Roblox</td>
+                                <td class="price-cell highlight">৩,৫০০ <span data-key="per_month">টাকা/মাসিক</span> (<span data-key="discount_500">৫০০ টাকা ছাড়!</span>)</td>
+                                <td><button class="btn small-btn primary-btn" onclick="addToCart('L2_COMBO', 'লেভেল ২ কম্বো', 3500)" data-key="add_combo_btn">Add Combo</button></td>
+                            </tr>
+                            <tr>
+                                <td>৩</td>
+                                <td>C Language / Web Dev (যেকোনো একটি)</td>
+                                <td class="price-cell">২,৫০০ <span data-key="per_month">টাকা/মাসিক</span></td>
+                                <td><button class="btn small-btn" onclick="toggleCart(true)" data-key="select_track">Select Track</button></td>
+                            </tr>
+                            <tr class="combo-row">
+                                <td>৩ কম্বো</td>
+                                <td>C Language + Web Dev</td>
+                                <td class="price-cell highlight">৪,৫০০ <span data-key="per_month">টাকা/মাসিক</span> (<span data-key="discount_500">৫০০ টাকা ছাড়!</span>)</td>
+                                <td><button class="btn small-btn primary-btn" onclick="addToCart('L3_COMBO', 'লেভেল ৩ কম্বো', 4500)" data-key="add_combo_btn">Add Combo</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offers Section -->
+        <section id="offers" class="offers-section">
+            <div class="container">
+                <h2 data-key="offers_heading">বিশেষ অফার</h2>
+                <div class="offer-grid">
+                    <div class="offer-card">
+                        <h3 data-key="offer_1_title"><i class="fas fa-graduation-cap"></i> BIKS স্টুডেন্ট ডিসকাউন্ট</h3>
+                        <p data-key="offer_1_desc">BIKS-এর নিয়মিত ছাত্রছাত্রীদের জন্য সকল কোডিং কোর্সে <strong>আজীবন ২০% ছাড়</strong>!</p>
+                    </div>
+                    <div class="offer-card">
+                        <h3 data-key="offer_2_title"><i class="fas fa-robot"></i> ফ্রি AI বোনাস</h3>
+                        <p data-key="offer_2_desc">প্রতিটি লেভেলের সাথে AI-এর ব্যবহার সম্পূর্ণ ফ্রি! (Prompt Understanding, Debugging ও Art Generation)।</p>
+                    </div>
+                    <div class="offer-card">
+                        <h3 data-key="offer_3_title"><i class="fas fa-gift"></i> ফাউন্ডার'স ব্যাচ অফার</h3>
+                        <p data-key="offer_3_desc">প্রথম ব্যাচে ভর্তি হলেই প্রথম মাসের ফি-এর উপর <strong>অতিরিক্ত ৫০০ টাকা ছাড়</strong>।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 data-key="cta_heading">আজই আপনার সন্তানের উজ্জ্বল ভবিষ্যতের পথে যাত্রা শুরু করুন!</h2>
+                <a href="https://wa.me/+8801815650971?text=আমি BIKS টেক একাডেমির একটি কোর্সে ভর্তি হতে আগ্রহী।" class="btn primary-btn large-btn" target="_blank" data-key="cta_whatsapp_btn">
+                    WhatsApp-এ কথা বলুন <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col contact-info">
+                    <h4 data-key="footer_contact_title">যোগাযোগের ঠিকানা</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> ৪৯/এ আর.কে. মিশন রোড, সেন্ট্রাল ওমেন্স কলেজের পাশে, টিকাটুলি, ঢাকা।</p>
+                    <p><i class="fas fa-phone-alt"></i> <span data-key="phone_label">ফোন:</span> <a href="tel:01815650971">01815-650971</a></p>
+                    <p><i class="fas fa-envelope"></i> <span data-key="email_label">ইমেইল:</span> <a href="mailto:pritombhowmik360@gmail.com">pritombhowmik360@gmail.com</a></p>
+                </div>
+                <div class="footer-col links">
+                    <h4 data-key="footer_links_title">গুরুত্বপূর্ণ লিংক</h4>
+                    <ul>
+                        <li><a href="#level-1" data-key="link_L1">লেভেল ১ (৬-৯ বছর)</a></li>
+                        <li><a href="#level-2" data-key="link_L2">লেভেল ২ (১০-১৩ বছর)</a></li>
+                        <li><a href="#level-3" data-key="link_L3">লেভেল ৩ (১৩-১৬ বছর)</a></li>
+                        <li><a href="#offers" data-key="link_offers">বিশেষ ছাড় ও অফার</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col motto-text">
+                    <h4 data-key="footer_goal_title">আমাদের লক্ষ্য</h4>
+                    <p data-key="logo_motto">"কোডিং-এর হাতেখড়ি থেকে AI-এর দুনিয়া!"</p>
+                    <p class="small-text" data-key="footer_mission_desc">BIKS টেক একাডেমি শিশুদের মধ্যে Logic ও Problem Solving-এর ভিত্তি মজবুত করতে বদ্ধপরিকর।</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p data-key="copyright_text">&copy; ২০২৫ BIKS টেক একাডেমি। সকল স্বত্ব সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

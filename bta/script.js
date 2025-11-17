@@ -39,6 +39,12 @@ const translations = {
     'hero_heading': { bn: 'ভবিষ্যতের জন্য প্রস্তুত হোন: AI ও কোডিং এখন হাতের মুঠোয়', en: 'Prepare for the Future: AI and Coding at Your Fingertips' },
     'hero_subtitle': { bn: '৬ থেকে ১৬ বছর বয়সী শিশুদের জন্য ৩-স্তরের পূর্ণাঙ্গ প্রোগ্রামিং কারিকুলাম।', en: '3-Level Comprehensive Programming Curriculum for Ages 6-16.' },
     'hero_cta': { bn: 'কোর্সগুলো দেখুন ↓', en: 'View Courses ↓' },
+        // NEW: Requirements Section (Shared and Specific Keys)
+    'req_heading': { bn: 'প্রয়োজনীয় উপকরণ ও সিস্টেম', en: 'Required Tools & System' },
+    'req_software_title': { bn: 'সফটওয়্যার/প্ল্যাটফর্ম', en: 'Software/Platforms' },
+    'req_device_title': { bn: 'ডিভাইস', en: 'Devices' },
+    'req_specs_title': { bn: 'মিনিমাম সিস্টেম', en: 'Minimum System' },
+
 
     // Level 1
     'level_tag_1': { bn: 'লেভেল ১', en: 'LEVEL 1' },
@@ -58,6 +64,11 @@ const translations = {
     'L1_ai_1': { bn: '<strong>"AI দিয়ে গল্প লেখা!":</strong> স্ক্র্যাচ গেমের জন্য আইডিয়া ও গল্প তৈরি (Basic Prompt Understanding)।', en: '<strong>"AI Storytelling!":</strong> Generating ideas and stories for Scratch games (Basic Prompt Understanding).' },
     'L1_ai_2': { bn: '<strong>"AI Art for Kids":</strong> AI-কে নির্দেশনা দিয়ে কার্টুন ও ছবি বানানোর আইডিয়া।', en: '<strong>"AI Art for Kids":</strong> Generating cartoon and picture ideas using AI prompts.' },
     'enroll_L1': { bn: 'ভর্তি হন (১,৫০০ টাকা/মাস) 🛒', en: 'Enroll Now (1,500 Taka/Month) 🛒' },
+        // Level 1 Requirements
+    'req_L1_software_desc': { bn: 'Scratch (ওয়েব) এবং Scratch Jr. (ট্যাবলেট অ্যাপ)। কোনো কিছু ইনস্টল করার জটিলতা নেই।', en: 'Scratch (Web) and Scratch Jr. (Tablet App). No complex installation needed.' },
+    'req_L1_device_desc': { bn: 'যেকোনো সাধারণ ল্যাপটপ/ডেস্কটপ এবং Scratch Jr. এর জন্য একটি অ্যান্ড্রয়েড ট্যাব বা আইপ্যাড।', en: 'Any standard Laptop/Desktop and an Android Tablet or an iPad for Scratch Jr.' },
+    'req_L1_specs_desc': { bn: 'OS: Windows 10, macOS 10.13+ <br> RAM: 4GB <br> Browser: Chrome/Firefox (Latest)', en: 'OS: Windows 10, macOS 10.13+ <br> RAM: 4GB <br> Browser: Chrome/Firefox (Latest)' },
+
 
     // Level 2
     'level_tag_2': { bn: 'লেভেল ২', en: 'LEVEL 2' },
@@ -77,7 +88,11 @@ const translations = {
     'combo_L2_title': { bn: 'লেভেল ২ কম্বো অফার', en: 'Level 2 Combo Offer' },
     'combo_L2_desc': { bn: 'অ্যাপ ডেভেলপার + গেম ডিজাইনার (App Inventor + Roblox)', en: 'App Developer + Game Designer (App Inventor + Roblox)' },
     'enroll_combo_L2': { bn: 'কম্বো অফারে ভর্তি হন (৩,৫০০ টাকা/মাস) 🏷️', en: 'Enroll in Combo (3,500 Taka/Month) 🏷️' },
-
+            // Level 2 Requirements
+    'req_L2_software_desc': { bn: 'MIT App Inventor (ওয়েব) এবং Roblox Studio (ডেস্কটপ অ্যাপ)। আমরা ইনস্টলেশনে সাহায্য করব।', en: 'MIT App Inventor (Web) and Roblox Studio (Desktop App). We will assist with installation.' },
+    'req_L2_device_desc': { bn: 'একটি সচল ল্যাপটপ/পিসি এবং App Inventor-এর জন্য অ্যাপ পরীক্ষার জন্য একটি অ্যান্ড্রয়েড ফোন।', en: 'A functional Laptop/PC and an Android phone for testing apps from App Inventor.' },
+    'req_L2_specs_desc': { bn: 'OS: Windows 10, macOS 10.13+ <br> RAM: 4GB', en: 'OS: Windows 10, macOS 10.13+ <br> RAM: 4GB' },
+    
     // Level 3
     'level_tag_3': { bn: 'লেভেল ৩', en: 'LEVEL 3' },
     'level_3_title': { bn: 'ফিউচার প্রোগ্রামার (Future Programmer) 💻🌐', en: 'Future Programmer 💻🌐' },
@@ -96,6 +111,10 @@ const translations = {
     'combo_L3_title': { bn: 'লেভেল ৩ কম্বো অফার', en: 'Level 3 Combo Offer' },
     'combo_L3_desc': { bn: 'ইউনিভার্সিটি ফাউন্ডেশন + ওয়েব আর্কিটেক্ট (C Language + Web Dev)', en: 'University Foundation + Web Architect (C Language + Web Dev)' },
     'enroll_combo_L3': { bn: 'কম্বো অফারে ভর্তি হন (৪,৫০০ টাকা/মাস) 🏷️', en: 'Enroll in Combo (4,500 Taka/Month) 🏷️' },
+        // Level 3 Requirements
+    'req_L3_software_desc': { bn: 'VS Code (টেক্সট এডিটর), C Compiler এবং আধুনিক ওয়েব ব্রাউজার। সব সফটওয়্যারই ফ্রি এবং আমরা ইনস্টল করতে সাহায্য করব।', en: 'VS Code (Text Editor), a C Compiler, and a modern web browser. All software is free, and we will help install them.' },
+    'req_L3_device_desc': { bn: 'একটি ভালো মানের ল্যাপটপ বা ডেস্কটপ কম্পিউটার (Windows/Mac)।', en: 'A good quality Laptop or Desktop computer (Windows/Mac).' },
+    'req_L3_specs_desc': { bn: 'OS: Windows 10, macOS 10.15+ <br> RAM: 8GB <br> Storage: 20GB Free Space', en: 'OS: Windows 10, macOS 10.15+ <br> RAM: 8GB <br> Storage: 20GB Free Space' },
 
     // NEW: Trial Class Section
     'trial_heading': { bn: 'নিশ্চিত নন কোন কোর্সটি সেরা?', en: 'Not Sure Which Course is Best?' },

@@ -802,3 +802,56 @@ footer {
     }
 }
 /* ... existing media query styles ... */
+
+/* --- Level Sections (Add styles for requirements) --- */
+.level-section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.requirements-wrapper {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.requirements-wrapper h4 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.req-card {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.req-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.req-card h5 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.req-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+}
+

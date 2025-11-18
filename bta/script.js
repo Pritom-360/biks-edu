@@ -37,7 +37,7 @@ const translations = {
 
     // Hero Section
     'hero_heading': { bn: 'ভবিষ্যতের জন্য প্রস্তুত হোন: AI ও কোডিং এখন হাতের মুঠোয়', en: 'Prepare for the Future: AI and Coding at Your Fingertips' },
-    'hero_subtitle': { bn: '৪ থেকে ১৬ বছর বয়সী শিশুদের জন্য ৩-স্তরের পূর্ণাঙ্গ প্রোগ্রামিং কারিকুলাম।', en: '3-Level Comprehensive Programming Curriculum for Ages 4-16.' },
+    'hero_subtitle': { bn: '৪ থেকে ১৬+ বছর বয়সী শিশুদের জন্য ৩-স্তরের পূর্ণাঙ্গ প্রোগ্রামিং কারিকুলাম।', en: '3-Level Comprehensive Programming Curriculum for Ages 4-16+.' },
     'hero_cta': { bn: 'কোর্সগুলো দেখুন ↓', en: 'View Courses ↓' },
         // NEW: Requirements Section (Shared and Specific Keys)
     'req_heading': { bn: 'প্রয়োজনীয় উপকরণ ও সিস্টেম', en: 'Required Tools & System' },
@@ -171,8 +171,8 @@ const translations = {
     'footer_contact_title': { bn: 'যোগাযোগের ঠিকানা', en: 'Contact Address' },
     'footer_links_title': { bn: 'গুরুত্বপূর্ণ লিংক', en: 'Important Links' },
     'link_L1': { bn: 'লেভেল ১ (৪-৬+ বছর)', en: 'Level 1 (Ages 4-6+)' },
-    'link_L2': { bn: 'লেভেল ২ (১০-১৩ বছর)', en: 'Level 2 (Ages 10-13)' },
-    'link_L3': { bn: 'লেভেল ৩ (১৩-১৬ বছর)', en: 'Level 3 (Ages 13-16)' },
+    'link_L2': { bn: 'লেভেল ২ (৭-১২+ বছর)', en: 'Level 2 (Ages 7-12+)' },
+    'link_L3': { bn: 'লেভেল ৩ (১৩-১৬+ বছর)', en: 'Level 3 (Ages 13-16+)' },
     'link_offers': { bn: 'বিশেষ ছাড় ও অফার', en: 'Special Discounts & Offers' },
     'footer_goal_title': { bn: 'আমাদের লক্ষ্য', en: 'Our Goal' },
     'footer_mission_desc': { bn: 'BIKS টেক একাডেমি শিশুদের মধ্যে Logic ও Problem Solving-এর ভিত্তি মজবুত করতে বদ্ধপরিকর।', en: 'BIKS Tech Academy is committed to strengthening the foundation of Logic and Problem Solving in children.' },
